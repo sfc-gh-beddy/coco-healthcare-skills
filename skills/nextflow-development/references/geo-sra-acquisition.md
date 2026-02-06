@@ -94,7 +94,7 @@ Example: "Find differentially expressed genes in GSE309891 (drug-treated vs cont
 
 ---
 
-## Instructions for Claude
+## Instructions for AI Assistant
 
 When assisting users with GEO/SRA data acquisition:
 

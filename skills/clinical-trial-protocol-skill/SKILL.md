@@ -87,8 +87,7 @@ scripts/
 ### 1. clinical trials MCP Server (Required)
 
 **Installation:**
-- Install via drag-and-drop `.mcpb` file into Claude Desktop
-- Or configure manually in Claude Desktop settings
+- Configure MCP server in your AI coding assistant settings
 
 **Available Tools:**
 `search_clinical_trials` - Search by:

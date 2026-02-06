@@ -1,6 +1,6 @@
 # Healthcare & Life Sciences Skills for AI Coding Assistants
 
-A collection of domain-specific skills for AI coding assistants (Claude Code, Cortex Code, etc.) focused on healthcare and life sciences workflows.
+A collection of domain-specific skills for AI coding assistants focused on healthcare and life sciences workflows.
 
 These skills are adapted from [Anthropic's life-sciences repository](https://github.com/anthropics/life-sciences) for broader use.
 
@@ -62,18 +62,9 @@ description: Brief description for triggering the skill
 - Instructions...
 ```
 
-## Using with Claude Code
-
-For Claude Code, skills can be installed via the plugin system:
-
-```
-/plugin marketplace add YOUR_USERNAME/healthcare-skills-md
-/plugin install single-cell-rna-qc@healthcare-skills-md
-```
-
 ## Using with Cortex Code
 
-For Cortex Code, copy the skill folder to your `.cortex/skills/` directory:
+Copy the skill folder to your `.cortex/skills/` directory:
 
 ```bash
 cp -r skills/single-cell-rna-qc ~/.cortex/skills/
