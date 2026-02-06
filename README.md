@@ -1,8 +1,8 @@
-# Healthcare & Life Sciences Skills for AI Coding Assistants
+# Healthcare & Life Sciences Skills for Cortex Code
 
-A collection of domain-specific skills for AI coding assistants focused on healthcare and life sciences workflows.
+A collection of domain-specific skills for [Cortex Code](https://docs.snowflake.com/user-guide/snowflake-cortex/cortex-agents) focused on healthcare and life sciences workflows.
 
-These skills are adapted from [Anthropic's life-sciences repository](https://github.com/anthropics/life-sciences) for broader use.
+These skills are adapted from [Anthropic's life-sciences repository](https://github.com/anthropics/life-sciences).
 
 ## Available Skills
 
@@ -15,21 +15,18 @@ These skills are adapted from [Anthropic's life-sciences repository](https://git
 
 ## Installation
 
-### Option 1: Download Individual Skills
-
-1. Navigate to the skill folder you want (e.g., `skills/single-cell-rna-qc/`)
-2. Download the entire folder
-3. Place it in your AI assistant's skills directory
-
-### Option 2: Clone Entire Repository
+Copy the skill folder to your `.cortex/skills/` directory:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/healthcare-skills-md.git
+# Clone the repo
+git clone https://github.com/sfc-gh-beddy/coco-healthcare-skills.git
+
+# Copy skills you want
+cp -r coco-healthcare-skills/skills/single-cell-rna-qc ~/.cortex/skills/
+cp -r coco-healthcare-skills/skills/scvi-tools ~/.cortex/skills/
 ```
 
-### Option 3: Download as ZIP
-
-Click the green "Code" button → "Download ZIP"
+Or download individual skill folders directly from GitHub.
 
 ## Skill Structure
 
@@ -41,33 +38,6 @@ skill-name/
 ├── scripts/           # Python helper scripts
 ├── references/        # Domain documentation
 └── assets/            # Templates (optional)
-```
-
-### SKILL.md Format
-
-The `SKILL.md` file contains YAML frontmatter and markdown instructions:
-
-```markdown
----
-name: skill-name
-description: Brief description for triggering the skill
----
-
-# Skill Title
-
-## When to Use This Skill
-- Trigger conditions...
-
-## How to Use
-- Instructions...
-```
-
-## Using with Cortex Code
-
-Copy the skill folder to your `.cortex/skills/` directory:
-
-```bash
-cp -r skills/single-cell-rna-qc ~/.cortex/skills/
 ```
 
 ## Skill Details
