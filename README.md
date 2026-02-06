@@ -12,6 +12,8 @@ These skills are adapted from [Anthropic's life-sciences repository](https://git
 | [clinical-trial-protocol](skills/clinical-trial-protocol-skill/) | Generate clinical trial protocols for devices/drugs | Creating FDA submission docs, IDE/IND pathways |
 | [scvi-tools](skills/scvi-tools/) | Deep learning for single-cell omics | Batch correction, multi-modal analysis, label transfer |
 | [nextflow-development](skills/nextflow-development/) | Run nf-core bioinformatics pipelines | RNA-seq, variant calling, ATAC-seq analysis |
+| [instrument-data-to-allotrope](skills/instrument-data-to-allotrope/) | Convert instrument data to ASM format | Standardizing lab data for LIMS, data lakes |
+| [scientific-problem-selection](skills/scientific-problem-selection/) | Research problem selection framework | Project ideation, troubleshooting, strategic decisions |
 
 ## Installation
 
@@ -81,6 +83,25 @@ Run nf-core bioinformatics pipelines:
 - Supports local FASTQs and GEO/SRA public data
 
 **Requirements:** Docker, Nextflow, Java 11+
+
+### Instrument Data to Allotrope
+
+Convert laboratory instrument files to standardized formats:
+- Auto-detect instrument types (PDF, CSV, Excel, TXT)
+- Output ASM JSON or flattened CSV
+- Generate Python parser code for data engineering handoff
+
+**Requirements:** `allotropy`, `pandas`, `openpyxl`, `pdfplumber`
+
+### Scientific Problem Selection
+
+Conversational framework for research decisions:
+- Pitch and refine new project ideas
+- Troubleshoot stuck research projects
+- Navigate strategic scientific decisions
+- Based on Fischbach & Walsh's decision tree framework
+
+**Requirements:** None (conversational skill)
 
 ## Contributing
 
