@@ -17,7 +17,7 @@ These skills are adapted from [Anthropic's life-sciences repository](https://git
 | [instrument-data-to-allotrope](skills/instrument-data-to-allotrope/) | Convert instrument data to ASM format | Standardizing lab data for LIMS, data lakes |
 | [scientific-problem-selection](skills/scientific-problem-selection/) | Research problem selection framework | Project ideation, troubleshooting, strategic decisions |
 
-### Snowflake Healthcare Skills (New)
+### Snowflake Healthcare Skills
 
 | Skill | Description | Use When |
 |-------|-------------|----------|
@@ -25,6 +25,9 @@ These skills are adapted from [Anthropic's life-sciences repository](https://git
 | [omop-cdm-modeling](skills/omop-cdm-modeling/) | OMOP Common Data Model ETL | Observational research, OHDSI analytics |
 | [variant-annotation](skills/variant-annotation/) | Annotate genomic variants | ClinVar, gnomAD, clinical variant interpretation |
 | [survival-analysis](skills/survival-analysis/) | Kaplan-Meier & Cox regression | Clinical outcomes, time-to-event analysis |
+| [pharmacovigilance](skills/pharmacovigilance/) | FDA FAERS adverse event analysis | Drug safety signals, ADR detection |
+| [claims-data-analysis](skills/claims-data-analysis/) | Healthcare claims RWE | Utilization, treatment patterns, PMPM costs |
+| [clinical-nlp](skills/clinical-nlp/) | Extract entities from clinical text | NER on notes, medication extraction, ICD coding |
 
 ## Installation
 
@@ -37,7 +40,7 @@ git clone https://github.com/sfc-gh-beddy/coco-healthcare-skills.git
 # Copy skills you want
 cp -r coco-healthcare-skills/skills/single-cell-rna-qc ~/.cortex/skills/
 cp -r coco-healthcare-skills/skills/fhir-data-transformation ~/.cortex/skills/
-cp -r coco-healthcare-skills/skills/survival-analysis ~/.cortex/skills/
+cp -r coco-healthcare-skills/skills/pharmacovigilance ~/.cortex/skills/
 ```
 
 Or download individual skill folders directly from GitHub.
@@ -155,6 +158,40 @@ Clinical outcomes analysis:
 
 **Requirements:** `lifelines`, `pandas`, `matplotlib`
 
+### Pharmacovigilance
+
+Analyze FDA FAERS data for drug safety:
+- Load FAERS quarterly ASCII files to Snowflake
+- Calculate PRR, ROR disproportionality metrics
+- Signal detection with statistical thresholds
+- Drug-event association analysis
+
+**Requirements:** `pandas`, `scipy`, `snowflake-connector-python`
+
+### Claims Data Analysis
+
+Healthcare claims for real-world evidence:
+- Medical claims (837P/837I) and pharmacy claims
+- Patient cohort building from diagnoses/Rx
+- PMPM cost calculations
+- Medication adherence (PDC)
+- Treatment pattern analysis
+- HEDIS-style quality measures
+
+**Requirements:** `pandas`, `numpy`, `snowflake-connector-python`
+
+### Clinical NLP
+
+Extract structured data from clinical text:
+- Entity extraction (medications, diagnoses, procedures)
+- Section detection (HPI, PMH, Assessment, Plan)
+- Negation and context detection
+- Vital signs extraction
+- Snowflake Cortex LLM integration
+- spaCy/scispaCy UDF deployment
+
+**Requirements:** `spacy`, `scispacy`, `medspacy` (optional)
+
 ## Contributing
 
 Contributions welcome! To add a new skill:
@@ -179,3 +216,4 @@ These skills are provided for educational and research purposes. They do not con
 - [nf-core](https://nf-co.re/) community
 - [OHDSI](https://ohdsi.org/) for OMOP CDM
 - [HL7 FHIR](https://hl7.org/fhir/) community
+- [FDA FAERS](https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-public-dashboard) for pharmacovigilance data
